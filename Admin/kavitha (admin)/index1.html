@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<meta charset="utf-8">
+	<title>settings</title>
+	<link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<style type="text/css">
+		.ui.inverted.segment {
+ background-color:green;
+}
+
+h1{
+font-family:Times New Roman; 
+color:blue;
+	}
+	</style>
+
+	<script type="text/javascript">
+		var app=angular.module("myapp",[]).controller("mycontroller",function($scope)
+    {
+var clg={
+code:01,
+name:"SAN TECHNO SOLUTIONS",
+img:"1.jpg",
+dno_street:"12-E.K.VALASU",
+city:"ERODE",
+state:"TAMILNADU",
+country:"INDIA",
+zipcode:638011,
+phone:22454,
+mobile:9098765432,
+faxno:22143,
+contact_person:"Mr.ADMIN",
+established_on:"01/01/2017",
+academic_year_from:"jun-2016",
+academic_year_to:"may-2017"
+};
+var dept=[{sno:1,dcode:"mca01",dname:"MCA",dtype:"Academic"},{sno:2,dcode:"it02",dname:"IT",dtype:"Academic"},{sno:3,dcode:"cse03",dname:"CSE",dtype:"Academic"},{sno:4,dcode:"101",dname:"Accounts",dtype:"NonAcademic"}];
+$scope.dept=dept;
+$scope.rowLimit=5;
+$scope.clg=clg;
+    });
+function fun1()
+{
+  document.getElementById('TableView1').style.display="inline";
+  document.getElementById('TableView2').style.display="none";
+  document.getElementById('TableView3').style.display="none";
+     
+}
+function fun2()
+{
+  document.getElementById('TableView1').style.display="none";
+  document.getElementById('TableView2').style.display="inline";
+  document.getElementById('TableView1').style.display="none";
+  document.getElementById('TableView4').style.display="none";
+     
+}
+function fun3()
+{
+  document.getElementById('TableView1').style.display="none";
+  document.getElementById('TableView1').style.display="none";
+  document.getElementById('TableView3').style.display="inline";
+     
+}
+function fun4()
+{
+  
+  document.getElementById('TableView4').style.display="inline";
+    $('.ui.modal').modal('show');
+}
+</script>
+
+</head>
+<body ng-controller="mycontroller">
+<div class=" ui container">
+<h1> <pre> <i class="settings icon">  SETTINGS</i></pre></h1>
+<div class="ui inverted segment" class="ui grid">
+	  <button class="ui inverted  purple button" onclick="fun1()">INSTITUTION DETAILS</button>
+	    <button class="ui inverted purple button" onclick="fun2()" >ACADEMIC DETAILS</button>
+	      <button class="ui inverted purple button" onclick="fun3()" >DEPARTMENT</button>
+</div>
+<div id="TableView1" style="display: none">
+  <form class="ui form">
+  <table class="ui green table">
+  <tr>
+  <div class="ui-grid" class="sixteen wide column" text-align:"center">
+    <td>INSTITUTION DETAILS</td></div>
+  </tr>
+  <tr>
+  <div class="ui-grid">
+    <td>
+  	 <div class=" eight wide column">
+    <label>INSTITUTION NAME</label>
+     <input name="institution-name" type="text"  ng-model="clg.name" disabled >
+  </div></td>
+  <td>
+  <div class=" four wide column">
+  	<label>INSTITUTION CODE</label>
+    <input name="institution-code" type="text" ng-model="clg.code" disabled>
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>CONTACT PERSON</label>
+    <input name="first-name" type="text" ng-model="clg.contact_person" disabled>
+  </div>
+  </td>
+  </div>
+</tr>
+  </div>
+  <tr>
+  <div class="ui-grid">
+  <td>
+     <div class=" eight wide column">
+    <label>D.NO & STREET</label>
+     <input name="dno_street" type="text" ng-model="clg.dno_street" disabled >
+  </div></td>
+  <td>
+  <div class=" four wide column">
+    <label>CITY</label>
+    <input name="city" type="text" ng-model="clg.city" disabled >
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>STATE</label>
+    <input name="state" type="text" ng-model="clg.state" disabled>
+  </div>
+  </td>
+  </div>
+  </tr>
+  <tr>
+  <div class="ui-grid">
+  <td>
+     <div class=" eight wide column">
+    <label>COUNTRY</label>
+     <input name="country" type="text" ng-model="clg.country" disabled>
+  </div></td>
+  <td>
+  <div class=" four wide column">
+    <label>ZIPCODE</label>
+    <input name="zipcode" type="text" ng-model="clg.zipcode" disabled>
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>PHONE NUMBER</label>
+    <input name="phone" type="text" ng-model="clg.phone" disabled>
+  </div>
+  </td>
+  </div>
+  </tr>
+  <tr>
+  <div class="ui-grid">
+  <td>
+     <div class=" eight wide column">
+    <label>MOBILE</label>
+     <input name="mobile" type="text" ng-model="clg.mobile" disabled >
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>FAX NUMBER</label>
+    <input name="fax" type="text" ng-model="clg.faxno" disabled >
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>SCHOOL ESTABLISED ON</label>
+    <input name="SCHOOLESTABLISED" type="text" ng-model="clg.established_on" disabled >
+  </div>
+  </td>
+  </div>
+  </tr> 
+    <tr>
+  <div class="ui-grid">
+  <td>
+     <div class=" eight wide column">
+    <label>ACADEMIC YEAR FROM</label>
+     <input name="mobile" type="text" ng-model="clg.academic_year_from" disabled >
+  </div>
+  </td>
+  <td>
+  <div class=" four wide column">
+    <label>ACADEMIC YEAR TO</label>
+    <input name="fax" type="text" ng-model="clg.academic_year_to" disabled>
+  </div>
+  </td>
+    </div>
+  </tr> 
+</table>
+</form>
+</div>
+<div id="TableView2" style="display: none"> 
+<input type="text" placeholder="search here " ng-model="searchtext">
+Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
+<button class="ui inverted green button" onclick="fun6()">ADD DEPARTMENT</button>
+ <table class="ui green table">
+<thead>
+<tr>
+<th>SNO</th>
+    <th>DEPARTMENT CODE</th>
+    <th>DEPARTMENT NAME</th>
+     <th>DEPARTMENT TYPE</th>
+      <th>OPTIONS</th> 
+
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in dept|filter: searchtext| limitTo:rowLimit">
+    <td>{{x.sno}}</td>
+    <td>{{x.dcode}}</td>
+    <td>{{x.dname}}</td>
+    <td>{{x.dtype}}</td>
+    <td>
+    <button class="ui inverted green button" onclick="fun4()">EDIT</button>
+    <button class="ui inverted green button" onclick="fun5()">DELETE</button>
+      
+    </td>
+    </tr>
+  </tbody>
+ </table>
+ <div id="TableView4" style="display: none">
+ <div class="ui container">
+<div class="ui modal">
+<i class="close icon"></i>
+<div class="header">
+DEPARTMENT
+</div>
+<div class="content">
+ department edit
+</div>
+<div class="actions">
+<div class="ui red cancel button">close</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
