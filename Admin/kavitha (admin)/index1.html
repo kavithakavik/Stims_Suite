@@ -6,6 +6,10 @@
 	<link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
 <style type="text/css">
 		.ui.inverted.segment {
@@ -39,10 +43,19 @@ academic_year_from:"jun-2016",
 academic_year_to:"may-2017"
 };
 var dept=[{sno:1,dcode:"mca01",dname:"MCA",dtype:"Academic"},{sno:2,dcode:"it02",dname:"IT",dtype:"Academic"},{sno:3,dcode:"cse03",dname:"CSE",dtype:"Academic"},{sno:4,dcode:"101",dname:"Accounts",dtype:"NonAcademic"}];
+
+var academic=[{Sno:1,Start_Month_Year:"jun-2016",End_Month_Year:"may-2017",Status:"Active"},{Sno:2,Start_Month_Year:"jun-2015",End_Month_Year:"may-2016",Status:"Deactive"},{Sno:3,Start_Month_Year:"jun-2014",End_Month_Year:"may-2015",Status:"Deactive"},{Sno:4,Start_Month_Year:"jun-2013",End_Month_Year:"may-2014",Status:"Deactive"}];
+
+
 $scope.dept=dept;
 $scope.rowLimit=5;
 $scope.clg=clg;
+$scope.academic=academic;
     });
+
+
+
+
 function fun1()
 {
   document.getElementById('TableView1').style.display="inline";
@@ -54,23 +67,56 @@ function fun2()
 {
   document.getElementById('TableView1').style.display="none";
   document.getElementById('TableView2').style.display="inline";
-  document.getElementById('TableView1').style.display="none";
+  document.getElementById('TableView3').style.display="none";
   document.getElementById('TableView4').style.display="none";
+  document.getElementById('TableView6').style.display="none";
      
 }
 function fun3()
 {
   document.getElementById('TableView1').style.display="none";
-  document.getElementById('TableView1').style.display="none";
+  document.getElementById('TableView2').style.display="none";
   document.getElementById('TableView3').style.display="inline";
-     
+  document.getElementById('TableView7').style.display="none";
+   document.getElementById('TableView9').style.display="none";    
 }
 function fun4()
 {
   
   document.getElementById('TableView4').style.display="inline";
-    $('.ui.modal').modal('show');
+      $('#modal1').modal('show');
+      // document.getElementById('TableView5').style.display="none";
 }
+function fun6()
+{
+  
+  document.getElementById('TableView6').style.display="inline";
+        $('#modal2').modal('show');
+     // document.getElementById('TableView4').style.display="none";
+}
+function fun7()
+{
+  
+  document.getElementById('TableView7').style.display="inline";
+        $('#modal4').modal('show');
+    
+}
+
+function fun9()
+{
+  
+  document.getElementById('TableView9').style.display="inline";
+        $('#modal5').modal('show');
+        $('#example7').calendar({
+  type: 'month'
+});
+        $('#example8').calendar({
+  type: 'month'
+});
+     
+}
+
+
 </script>
 
 </head>
@@ -79,9 +125,10 @@ function fun4()
 <h1> <pre> <i class="settings icon">  SETTINGS</i></pre></h1>
 <div class="ui inverted segment" class="ui grid">
 	  <button class="ui inverted  purple button" onclick="fun1()">INSTITUTION DETAILS</button>
-	    <button class="ui inverted purple button" onclick="fun2()" >ACADEMIC DETAILS</button>
-	      <button class="ui inverted purple button" onclick="fun3()" >DEPARTMENT</button>
+	    <button class="ui inverted purple button" onclick="fun2()" >DEPARTMENT</button>
+	      <button class="ui inverted purple button" onclick="fun3()" >ACADEMIC DETAILS</button>
 </div>
+<!-- fun1() start -->
 <div id="TableView1" style="display: none">
   <form class="ui form">
   <table class="ui green table">
@@ -170,7 +217,7 @@ function fun4()
   <td>
   <div class=" four wide column">
     <label>SCHOOL ESTABLISED ON</label>
-    <input name="SCHOOLESTABLISED" type="text" ng-model="clg.established_on" disabled >
+    <input name="established_on" type="text" ng-model="clg.established_on" disabled >
   </div>
   </td>
   </div>
@@ -180,13 +227,13 @@ function fun4()
   <td>
      <div class=" eight wide column">
     <label>ACADEMIC YEAR FROM</label>
-     <input name="mobile" type="text" ng-model="clg.academic_year_from" disabled >
+     <input name="academic_year_from" type="text" ng-model="clg.academic_year_from" disabled >
   </div>
   </td>
   <td>
   <div class=" four wide column">
     <label>ACADEMIC YEAR TO</label>
-    <input name="fax" type="text" ng-model="clg.academic_year_to" disabled>
+    <input name="academic_year_to" type="text" ng-model="clg.academic_year_to" disabled>
   </div>
   </td>
     </div>
@@ -194,7 +241,9 @@ function fun4()
 </table>
 </form>
 </div>
-<div id="TableView2" style="display: none"> 
+<!-- fun1() end -->
+<!-- fun2() start -->
+<div id="TableView2" class="ui input" style="display: none"> 
 <input type="text" placeholder="search here " ng-model="searchtext">
 Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
 <button class="ui inverted green button" onclick="fun6()">ADD DEPARTMENT</button>
@@ -224,22 +273,134 @@ Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><
   </tbody>
  </table>
  <div id="TableView4" style="display: none">
- <div class="ui container">
-<div class="ui modal">
+<div class="ui modal" id="modal1">
 <i class="close icon"></i>
 <div class="header">
 DEPARTMENT
 </div>
 <div class="content">
- department edit
+<div class="ui input" >
+<div ng-repeat="(header, value) in dept[0]">
+<label >{{header}}</label>
+  <input placeholder="{{value}}" type="text">
+</div>
+</div>
 </div>
 <div class="actions">
+<div class="ui green button">save</div>
 <div class="ui red cancel button">close</div>
 </div>
 </div>
 </div>
+<div id="TableView6" style="display: none"> 
+<div class="ui modal" id="modal2" >
+<i class="close icon"></i>
+<div class="header">
+DEPARTMENT
 </div>
+<div class="content">
+<div class="ui input" >
+<div ng-repeat="(header, value) in dept[0]">
+<label></label>
+  <input placeholder="{{header}}" type="text">
+</div>
+</div>
+</div>
+<div class="actions">
+<div class="ui green button" id="add">add</div>
+<div class="ui red cancel button">close</div>
+</div>
+</div>
+</div> 
+</div>
+<!-- fun2() end -->
+<!-- fun3() start -->
+
+<div id="TableView3" class="ui input" style="display: none"> 
+<input type="text" placeholder="search here " ng-model="searchtext">
+Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
+<button class="ui inverted green button" onclick="fun9()">ADD ACADEMIC YEAR </button>
+ <table class="ui green table">
+<thead>
+<tr>
+<th>SNO</th>
+    <th>START YEAR & MONTH</th>
+    <th>END YEAR & MONTH</th>
+     <th>STATUS</th>
+      <th>OPTION</th> 
+
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in academic|filter: searchtext| limitTo:rowLimit">
+    <td>{{x.Sno}}</td>
+    <td>{{x.Start_Month_Year}}</td>
+    <td>{{x.End_Month_Year}}</td>
+    <td>{{x.Status}}</td>
+    <td>
+    <button class="ui inverted green button" onclick="fun7()">EDIT</button>
+    <button class="ui inverted green button" onclick="fun8()">DELETE</button>
+    </td>
+    </tr>
+  </tbody>
+ </table>
+ <div id="TableView7" style="display: none">
+<div class="ui modal" id="modal4">
+<i class="close icon"></i>
+<div class="header">
+ACADEMIC
+</div>
+<div class="content">
+<div class="ui input" >
+<div ng-repeat="(header, value) in academic[0]">
+<label >{{header}}</label>
+  <input placeholder="{{value}}" type="text">
+</div>
+</div>
+</div>
+<div class="actions">
+<div class="ui green button">save</div>
+<div class="ui red cancel button">close</div>
+</div>
+</div>
+</div>
+<div id="TableView9" style="display: none"> 
+<div class="ui modal" id="modal5" >
+<i class="close icon"></i>
+<div class="header">
+DEPARTMENT
+</div>
+<div class="content">
+<!-- <div class="ui input" > -->
+  <div class="ui calendar" id="example7">
+    <div class="ui input left icon">
+      <i class="time icon"></i>
+      <input type="text" placeholder="select Start_Month_Year">
+        </div>
+        </div>
+        <div class="ui calendar" id="example8">
+    <div class="ui input left icon">
+      <i class="time icon"></i>
+       <div class="ui input left icon">
+      <i class="time icon"></i>
+            <input type="text" placeholder="select End_Month_Year" >
+    </div>
+    </div>
+  </div>
+  <div class="ui input">
+           <input type="text" placeholder="Status">
+         </div>
+  </div>
+  <br/>
+
+<div class="actions">
+<div class="ui green button" id="add">add</div>
+<div class="ui red cancel button">close</div>
+</div>
+</div>
+</div> 
 </div>
 
+</div>
 </body>
 </html>
