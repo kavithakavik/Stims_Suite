@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guardian details</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        <center>
+            <div class="well well-sm">
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+                        <legend class="text-center header">Contact us</legend>
+                        
+
+                        
+
+                        <div class="form-group">
+                         <legend class="text-center header">personal details</legend>
+                        
+                            <div class="col-md-10 col-md-offset-1">
+                                <textarea class="form-control" id="message" name="message" placeholder="Enter your personal details." rows="7"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                         <legend class="text-center header">parent/guardian details</legend>
+                        
+                            <div class="col-md-10 col-md-offset-1">
+                                <textarea class="form-control" id="message" name="message" placeholder="Enter your parent/guardian details." rows="7"></textarea>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group">
+                         <legend class="text-center header">previous schooling details</legend>
+                        
+                            <div class="col-md-10 col-md-offset-1">
+                                <textarea class="form-control" id="message" name="message" placeholder="Enter your previous schooling details." rows="7"></textarea>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-10 text-center">
+                            <button onclick="myFunction()" class="btn btn-success">Save</button>
+
+                       <script>
+                       function myFunction() {
+                      alert("please check the filled details!");
+                       }
+                      </script>
+                                   <button onclick="myFunction" class="btn btn-danger">Cancel</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+           </center>
+        </div>
+        
+    </div>
+</div>
+<style>
+    
+    .header {
+        background-color: green;
+        color: white;
+        height: 50px;
+        font-size: 16px;
+        padding: px;
+    }
+</style>
+</body>
+</html>

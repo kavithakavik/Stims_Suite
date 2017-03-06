@@ -1,0 +1,341 @@
+<html>
+<head>
+
+<title>Personaldetails</title>
+<link rel="stylesheet" href="  css/breadcrumbs.css">
+    <link href="RegProject/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+<style>
+body {
+    background-color: #eee;
+}
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: green;
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+
+</style>
+<div class="container">
+  
+   
+            <form class="form-horizontal" role="form">
+                <h2>Registration Form</h2>
+             
+ 
+ <div class="panel panel-default">
+  <div class="panel-body">
+   
+      <div class="form-group">
+
+                    <label for="firstName" class="col-sm-3 control-label">Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+                        
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Phonenumber</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="phonenumber" class="form-control" autofocus>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
+                    <div class="col-sm-9">
+                        <input type="date" id="birthDate" class="form-control">
+                    </div>
+                </div>
+
+                     <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Religion</label>
+                    <div class="col-sm-9">
+                        <select id="country" class="form-control">
+                            <option>Hindu</option>
+                            <option>Muslim</option>
+                             <option>Christianity</option>
+                              <option>Others</option>
+                             </select>
+                    </div>
+                    </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Gender</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" value="Female">Female
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" value="Male">Male
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="uncknownRadio" value="Unknown">Unknown
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+       Address
+        </a>
+      </h5>
+    </div>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel panel-default">
+  <div class="panel-body">
+   
+                     <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">StreetAddress</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="StreetAddress" class="form-control">
+                    </div>
+                </div>
+
+                     <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">StreetNumber</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="StreetNumber" class="form-control">
+                    </div>
+                </div>
+
+
+                     <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">City</label>
+                    <div class="col-sm-9">
+                        <input type="city" id="city" placeholder="city" class="form-control">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label" >Country</label>
+                    <div class="col-sm-9">
+                        <select id="country" class="form-control">
+                          <option>Select for country</option>
+                            <option>Afghanistan</option>
+                            <option>Bahamas</option>
+                            <option>Cambodia</option>
+                            <option>Denmark</option>
+                            <option>Ecuador</option>
+                            <option>Fiji</option>
+                            <option>Gabon</option>
+                            <option>Haiti</option>
+                        </select>
+                    </div>
+                </div> 
+
+                <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">State</label>
+                    <div class="col-sm-9">
+                        <select id="State" class="form-control">
+                          <option>Select for state</option>
+                            <option>Andhrapradesh</option>
+                            <option>Tamilnadu</option>
+                            <option>Mumbai</option>
+                            <option>Kolkata</option>
+                            <option>pune</option>
+                            <option>cochin</option>
+                        </select>
+                    </div>
+                </div> 
+
+                     <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Zipcode</label>
+                    <div class="col-sm-9">
+                        <input type="code" id="code" placeholder="code" class="form-control">
+                    </div>
+                </div>
+                 </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingThree">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Jobdetails
+        </a>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+     
+  <div class="panel panel-default">
+  <div class="panel-body">
+                <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Jobdetails</label>
+                    <div class="col-sm-9">
+                        <select id="State" class="form-control">
+                         <option>Select for jobdetails</option>
+                            <option>Student</option>
+                            <option>Teacher</option>
+                            <option>Head</option>
+                            <option>labour</option>
+                            <option>Driver</option>
+                            <option>others</option>
+                        </select>
+                    </div>
+                </div> 
+<div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Departmenttype</label>
+                    <div class="col-sm-9">
+                        <select id="State" class="form-control">
+                          <option>Select for department</option>
+                            <option>IT</option>
+                            <option>Computer</option>
+                            <option>Electrical</option>
+                            <option>Electonics</option>
+                            <option>Civil</option>
+                            <option>Mechanical</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">JobType</label>
+                    <div class="col-sm-9">
+                        <select id="State" class="form-control">
+                         <option>Select for jobType</option>
+                            <option>Permanent</option>
+                            <option>Contract</option>
+                           
+                        </select>
+                    </div>
+                </div> 
+
+<div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Qualification</label>
+                    <div class="col-sm-9">
+                        <select id="State" class="form-control">
+                         <option>Select for Qualification</option>
+                            <option>B.TECH</option>
+                            <option>B.E</option>
+                            <option>BSC</option>
+                            <option>+12</option>
+                            <option>DIPLOMO</option>
+                            <option>others</option>
+                        </select>
+                    </div>
+                </div> 
+
+<div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Bankname</label>
+                    <div class="col-sm-9">
+                        <select id="State" class="form-control">
+                         <option>Select for Bankname</option>
+                            <option>Punjabnationalbank</option>
+                            <option>Statebank</option>
+                            <option>Indianbank</option>
+                            <option>Canarabank</option>
+                            <option>Fedralbank</option>
+                            <option>others</option>
+                        </select>
+                    </div>
+                </div> 
+ <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Accountnumber</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="Accountnumber" class="form-control" autofocus>
+                        
+                    </div>
+</div>
+<div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">CertificateSoftcopy</label>
+                    <div class="col-sm-9">
+                        
+           <input type="file" id="myFile" placeholder="CertificateSoftcopy" class="form-control" autofocus>
+           
+
+                       <script>
+     function myFunction() {
+    var x = document.getElementById("myFile");
+    x.disabled = true;
+ </script> 
+
+                    </div>
+               </div>
+                 </div> 
+                 </div>
+
+              <div id="collapsefour" class="collapse" role="tabpanel" aria-labelledby="headingfour">
+      <div class="panel panel-default">
+  <div class="panel-body">
+   <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label" >Department/branch</label>
+                    <div class="col-sm-9">
+                        <select id="country" class="form-control">
+                          <option>Select for Department/branch</option>
+                            <option>Maths</option>
+                            <option>Physics</option>
+                            <option>Chemistry</option>
+                            <option>Tamil</option>
+                            <option>English</option>
+                            <option>EEE</option>
+                            <option>Mech</option>
+                            <option>IT</option>
+                        </select>
+                    </div>
+                </div> 
+
+                <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Experience</label>
+                    <div class="col-sm-9">
+                        <select id="State" class="form-control">
+                          <option>Select for Experience</option>
+                            <option>0-1</option>
+                            <option>1-2</option>
+                            <option>2-3</option>
+                            <option>3-4</option>
+                            <option>4-5</option>
+                            <option>5-6</option>
+                        </select>
+                    </div>
+                </div> 
+
+                     <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Zipcode</label>
+                    <div class="col-sm-9">
+                        <input type="code" id="code" placeholder="code" class="form-control">
+                    </div>
+                </div>
+                 </div>
+    </div>
+  </div>
+</form>
+
+ </body>
+ </html>

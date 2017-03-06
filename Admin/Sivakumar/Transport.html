@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<meta charset="utf-8">
+	<title>settings</title>
+	<link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<style type="text/css">
+		.ui.inverted.segment {
+ background-color:green;
+}
+
+h1{
+font-family:Times New Roman; 
+color:blue;
+	}
+	</style>
+
+	
+	
+	<script type="text/javascript">
+		var app=angular.module("myapp",[]).controller("mycontroller",function($scope)
+    {
+var dept=[{vhno:1,tns:"40",as:"38", route:"Tirupur"},{vhno:2,tns:"45",as:"42",route:"pollachi"},{vhno:3,tns:"23",as:"21",route:"Erode"},{vhno:4,tns:"100",as:"80",route:"Perundurai"}];
+var vehi=[{vno:1,Vroute:"Tirupur",Avno:"38", Membership:"owner"},{vno:2,Vroute:"pollachi",Avno:"39", Membership:"owner"},{vno:3,Vroute:"perundurai",Avno:"40", Membership:"owner"},{vno:4,Vroute:"vaikalmedu",Avno:"41", Membership:"owner"}];
+var alter=[{vno:1,VRoute:"TIRUPUR" , Sp:"CHENAGALPALAYAM" , Ep:"THIRUMALAPALAYAM" , Ns:"5"}];
+var student=[{rna:1,vno:"TIRUPUR" , pdn:"CHENAGALPALAYAM" , sn:"THIRUMALAPALAYAM" , Ai:"5"}];
+var driver=[{dna:"msd",da:45 , dob:"15/03/1945" , ld:"TH6789504567" , ss:"5" , bn:89 ,memo:3}];
+$scope.dept=dept;
+$scope.vehi=vehi;
+$scope.alter=alter;
+$scope.student=student;
+$scope.driver=driver;
+$scope.rowLimit=7;
+    });
+	
+	function fun1()
+
+{
+  document.getElementById('TableView1').style.display="inline";
+    document.getElementById('TableView2').style.display="none";
+	document.getElementById('Tableview3').style.display="none";
+	 document.getElementById('TableView4').style.display="none";
+	  document.getElementById('TableView5').style.display="none";
+       }
+	   
+	   function fun2()
+
+{
+ 
+    document.getElementById('TableView2').style.display="inline";
+	 document.getElementById('TableView1').style.display="none";
+	 document.getElementById('TableView3').style.display="none";
+	  document.getElementById('TableView4').style.display="none";
+	   document.getElementById('TableView5').style.display="none";
+       }
+	   
+	   
+	   function fun3()
+	   {
+	   document.getElementById('TableView3').style.display="inline";
+	    document.getElementById('TableView1').style.display="none";
+	 document.getElementById('TableView2').style.display="none";
+	    document.getElementById('TableView4').style.display="none";
+		 document.getElementById('TableView5').style.display="none";
+	 
+	   }
+	   
+	    function fun4()
+	   {
+	   document.getElementById('TableView4').style.display="inline";
+	   document.getElementById('TableView1').style.display="none";
+	   document.getElementById('TableView2').style.display="none";
+	    document.getElementById('TableView3').style.display="none";
+		 document.getElementById('TableView5').style.display="none";
+	   }
+	   
+	   
+	   function fun5()
+	   {
+	    document.getElementById('TableView5').style.display="inline";
+	   document.getElementById('TableView4').style.display="none";
+	   document.getElementById('TableView1').style.display="none";
+	   document.getElementById('TableView2').style.display="none";
+	    document.getElementById('TableView3').style.display="none";
+	   }
+	   </script>
+	   
+	
+</head>
+<body ng-controller="mycontroller">
+<div class=" ui container">
+<div class="ui padded segment">
+<h1> <pre> <i class=" bus icon">  TRANSPORT</i></pre></h1>
+<div class="ui inverted segment" class="ui grid">
+	 
+ <button class="ui inverted  button" onclick="fun1()" >MANAGE VEHICLE</button>
+ <button class="ui inverted  button" onclick="fun2()" >ALTERNATE VEHICLE</button>
+ <button class="ui inverted  button" onclick="fun3()" >BUS STOP DETAILS</button>
+ <button class="ui inverted  button" onclick="fun4()" >STUDENT VEHICLE MAPPING</button>
+ <button class="ui inverted  button" onclick="fun5()" >DRIVERINFORMATION</button> 
+</div>
+<div id="TableView1" style="display: none"> 
+<input type="text" placeholder="search here " ng-model="searchtext">
+Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
+<button class="ui inverted green button" onclick="fun6()">ADD VEHICLE</button>
+ <table class="ui green table">
+<thead>
+<tr>
+    <th>VEHICLE NUMBER</th>
+    <th>TOTAL SEATS</th>
+     <th>TOTAL SEATSAVAILABLE</th>
+        <th>BUSROUTE</TH>
+<th>OPTIONS</th>
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in dept|filter: searchtext| limitTo:rowLimit">
+    <td>{{x.vhno}}</td>
+    <td>{{x.tns}}</td>
+    <td>{{x.as}}</td>
+    <td>{{x.route}}</td>
+	 
+    <td>
+
+    <button class="ui inverted green button" onclick="fun7()">EDIT</button>
+    <button class="ui inverted green button" onclick="fun8()">DELETE</button>
+      
+    </td>
+    </tr>
+  </tbody>
+ </table>
+</div>
+
+
+<div id="TableView2" style="display: none"> 
+<input type="text" placeholder="search here " ng-model="searchtext">
+Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
+<button class="ui inverted green button" onclick="fun12()">ADD VEHICLE</button>
+ <table class="ui green table">
+<thead>
+<tr>
+    <th>VEHICLE NUMBER</th>
+    <th>ROUTE</th>
+     <th>VEHICLES IN STAND</th>
+	  <th>MEMBERSHIP</TH>
+<th>OPTIONS</th>
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in vehi|filter: searchtext| limitTo:rowLimit">
+    <td>{{x.vno}}</td>
+    <td>{{x.Vroute}}</td>
+    <td>{{x.Avno}}</td>
+	 <td>{{x.Membership}}</td>
+    <td>
+	
+    <button class="ui inverted green button" onclick="fun13()">ALTER</button>
+    <button class="ui inverted green button" onclick="fun14()">CANCEL</button>
+      
+    </td>
+    </tr>
+  </tbody>
+ </table>
+</div>
+
+
+<div id="TableView3" style="display: none"> 
+<input type="text" placeholder="search here " ng-model="searchtext">
+Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
+<button class="ui inverted green button" onclick="fun15()"> BUS STOP DETAILS</button>
+ <table class="ui green table">
+<thead>
+<tr>
+    <th>VEHICLE NUMBER</th>
+    <th>ROUTE</th>
+     <th>STARTING PLACE</th>
+	  <th>ENDING PLACE</th>
+	  <th>NUMBER OF STOPS</th>
+<th>OPTIONS</th>
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in alter|filter: searchtext| limitTo:rowLimit">
+    <td>{{x.vno}}</td>
+    <td>{{x.VRoute}}</td>
+    <td>{{x.Sp}}</td>
+	 <td>{{x.Ep}}</td>
+	 <td>{{x.Ns}}</td>
+    <td>
+	
+    <button class="ui inverted green button" onclick="fun16()">EDIT</button>
+    <button class="ui inverted green button" onclick="fun17()">CANCEL</button>
+      
+    </td>
+    </tr>
+  </tbody>
+ </table>
+</div>
+
+<div id="TableView4" style="display: none"> 
+<input type="text" placeholder="search here " ng-model="searchtext">
+Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
+<button class="ui inverted green button" onclick="fun18()"> Student-vehicle mapping</button>
+ <table class="ui green table">
+<thead>
+<tr>
+    <th>Route name</th>
+    <th>Vehicle no</th>
+     <th>Pickup and Drop points</th>
+	  <th>Student name</th>
+	  <th>Admission Id</th>
+	  <th>options</th>
+<th></th>
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in student|filter: searchtext| limitTo:rowLimit">
+    <td>{{x.rna}}</td>
+    <td>{{x.vno}}</td>
+    <td>{{x.pdn}}</td>
+	 <td>{{x.sn}}</td>
+	 <td>{{x.Ai}}</td>
+    <td>
+	
+    <button class="ui inverted green button" onclick="fun19()">EDIT</button>
+    <button class="ui inverted green button" onclick="fun20()">CANCEL</button>
+      
+    </td>
+    </tr>
+  </tbody>
+ </table>
+</div>
+
+
+<div id="TableView4" style="display: none"> 
+<input type="text" placeholder="search here " ng-model="searchtext">
+Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
+<button class="ui inverted green button" onclick="fun18()"> Student-vehicle mapping</button>
+ <table class="ui green table">
+<thead>
+<tr>
+    <th>Route name</th>
+    <th>Vehicle no</th>
+     <th>Pickup and Drop points</th>
+	  <th>Student name</th>
+	  <th>Admission Id</th>
+	  <th>options</th>
+<th></th>
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in student|filter: searchtext| limitTo:rowLimit">
+    <td>{{x.rna}}</td>
+    <td>{{x.vno}}</td>
+    <td>{{x.pdn}}</td>
+	 <td>{{x.sn}}</td>
+	 <td>{{x.Ai}}</td>
+    <td>
+	
+    <button class="ui inverted green button" onclick="fun19()">EDIT</button>
+    <button class="ui inverted green button" onclick="fun20()">CANCEL</button>
+      
+    </td>
+    </tr>
+  </tbody>
+ </table>
+</div>
+
+
+<div id="TableView5" style="display: none"> 
+<input type="text" placeholder="search here " ng-model="searchtext">
+Table Size:<input type="number" step="1" min="0" max="10" ng-model="rowLimit" ><br><br>
+<button class="ui inverted green button" onclick="fun21()"> DriverInformation</button>
+ <table class="ui green table">
+<thead>
+<tr>
+    <th>Drivername</th>
+	<th>age</th>
+	<th>DateofBirth</th>
+    <th>LicenseDetails</th>
+     <th>Serviceskills</th>
+	  <th>Busnumber</th>
+	  <th>Memo</th>
+<th></th>
+</tr>
+</thead> 
+<tbody>
+    <tr ng-repeat = " x in driver|filter: searchtext| limitTo:rowLimit">
+    <td>{{x.dna}}</td>
+    <td>{{x.da}}</td>
+    <td>{{x.dob}}</td>
+	 <td>{{x.ld}}</td>
+	 <td>{{x.ss}}</td>
+	 <td>{{x.bn}}</td>
+	 <td>{{x.memo}}</td>
+    </td>
+    </tr>
+  </tbody>
+ </table>
+</div>
+
+
+
+</body>
+</html>
