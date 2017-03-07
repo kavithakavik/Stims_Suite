@@ -1,0 +1,462 @@
+<html>
+<head>
+<title>
+Registration Form
+</title>
+<!-- Latest compiled and minified CSS -->
+<!-- Bootstrap -->
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+        function Filladdress(f) {
+  if(f.addresstoo.checked == true) {
+    f.permanentaddress2.value = f.presentaddress1.value;
+    f.pincode2.value = f.pincode1.value;
+    f.state2.value = f.state1.value;
+    f.country2.value = f.country1.value;
+  }
+}
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(200)
+                    .height(180);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>
+
+  <style type="text/css">
+      td
+      {
+        padding:10px;
+      }
+      :required  {  
+     background: url(https://cdn0.iconfinder.com/data/icons/fugue/icon/asterisk-small.png) no-repeat;
+     background-position:left top;
+    }
+   
+
+.margin_for_breadcrumb
+{
+  margin-top:19px;
+}
+
+
+
+.breadcrumb { 
+  list-style: none; 
+  overflow: hidden; 
+  font-size:16px;
+}
+.breadcrumb li { 
+  float: left; 
+}
+.breadcrumb li a {
+  color: white;
+  text-decoration: none; 
+  padding: 10px 0 10px 50px;
+  /*background: brown;*/ /* fallback color */
+  background: hsla(0, 0%, 0%,1); 
+  position: relative; 
+  display: block;
+  float: left;
+}
+.breadcrumb li a::after { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid hsla(0, 0%, 0%,1);
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  left: 100%;
+  z-index: 2; 
+}
+.breadcrumb li a::before { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;       
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  margin-left: 3px;
+  left: 100%;
+  z-index: 1; 
+}
+.breadcrumb li:first-child a {
+  padding-left: 60px;
+  background: hsla(140, 100%, 40%,1);
+}
+
+.breadcrumb li:first-child a:after { border-left-color: hsla(140, 100%, 40%,1);
+  padding-left: 79px;
+}
+.breadcrumb > li 
+{ 
+  text-shadow: 0 0px 0 #FAE;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+  </style>
+   
+
+</head>
+<body class="margin_for_breadcrumb">
+<ul class="breadcrumb">
+  <li><a href="#" style="
+    height: 40px;">Student Details</a></li>
+  <li><a href="#" style="
+    height: 40px;
+    padding-left: 60px;">Parent/Guardian Details</a></li>
+  <li><a href="#" style="
+    height: 40px;
+    ">Emergency Contact & Siblings Details</a></li>
+  <li><a href="#" style="
+    height: 40px;">School Details</a></li>
+  <li><a href="#" style="
+    height: 40px;">Other Details</a></li>
+  <li><a href="#" style="
+    height: 40px;">Uploads & Declaration</a></li>
+</ul>
+
+
+    <div class="container-fluid" ng-app="myApp" ng-controller="customer" >
+        <div class="centered-form">
+            <center>
+                <h3 class="text1">Admission Form</h3>
+            </center>
+            <hr/>
+            <h3 class="text1">1. Student Details</h3>
+        <div class="col-lg-12 ">
+
+        	<div class="panel panel-success ">
+        		<div class="panel-heading">
+			        <h3 class="panel-title">1.1 Basic Details </h3>
+			 	</div>
+			 	<div class="panel-body">
+			    	<form role="form">
+			    	    <div class="row col-lg-9">
+			    		 <table width="100%"   >
+			    				
+			    			<tr>
+			    			    <td>
+			    			
+			    			        <select  name="class" class="form-control" required="required" onchange="if (this.selectedIndex!==1){this.form['currentclass'].style.visibility='visible'}else {this.form['currentclass'].style.visibility='hidden'};">
+                                        <option value="" selected="selected">Applied For Class</option>
+                                        <option value="1">PreKG</option>
+                                        <option value="2">LKG</option>
+                                        <option value="3">UKG</option>
+                                        <option value="4">1</option>
+                                        <option value="5">2</option>
+                                        <option value="6">3</option>
+                                        <option value="7">4</option>
+                                        <option value="8">5</option>
+                                        <option value="9">6</option>
+                                        <option value="10">7</option>
+                                        <option value="11">8</option>
+                                        <option value="12">9</option>
+                                        <option value="13">11</option>
+
+                                    </select>
+
+                                </td>
+                                <td>
+
+                                    <select  name="currentclass" class="form-control" required="required" style="visibility:hidden;">
+                                        <option value="" selected="selected">Current Class</option>
+                                        <option value="prekgg">PreKG</option>
+                                        <option value="lkgg">LKG</option>
+                                        <option value="ukgg">UKG</option>
+                                        <option value="onee">1</option>
+                                        <option value="twoo">2</option>
+                                        <option value="threee">3</option>
+                                        <option value="fourr">4</option>
+                                        <option value="fivee">5</option>
+                                        <option value="sixx">6</option>
+                                        <option value="sevenn">7</option>
+                                        <option value="eightt">8</option>
+                                        <option value="ninee">9</option>
+                                        <option value="elevenn">11</option>
+   
+                                    </select>
+
+                                </td>
+
+                            </tr>
+                        
+                            <tr>
+                                <td>
+                                    <input type="text"  name="firstname" class="form-control" id="firstname" placeholder="First Name" required="required">
+
+                                </td>
+                                <td>
+                                    <select id="class" name="class" class="form-control" required="required">
+                                        <option value="" selected="selected">Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="middlename" id="middlename" class="form-control " placeholder="Middle Name" >
+                                </td>
+
+                                <td>
+
+                                    <input type="text" id="datepicker" class="form-control" placeholder="Date Of Birth" required="required">
+                                    
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="lastname" id="lastname" class="form-control " placeholder="Last Name">
+			    				
+                                </td>
+                                <td>		    				
+			    				
+                                    <input class="form-control" placeholder="Mother Tongue" type="text" id="inputMotherTongue" required="required"/>
+                                </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div class="col-lg-offset-10">
+                            <table>
+
+	                            <tr>
+	
+		                            <td>
+		
+			                            <img id="blah" src="no-image.jpg" class="img-responsive img-rounded" style="width:200px;height: 180px;">
+		
+		                            </td>
+	
+	                            </tr>
+	                            <tr>
+	                                <td>
+                                  <button class="fileUpload btn btn-primary">
+                                  <span>Choose Photo</span>
+	                                   <input type='file' class="upload" onchange="readURL(this);" />
+  
+                                        <img id="blah"   />
+                                        </button>
+
+	
+	                                <td>
+	                            </tr>
+                            </table>
+                        </div>
+                   </form>
+	            </div>
+	        
+	        
+	        </div>
+
+
+<div class="panel panel-success ">
+        		<div class="panel-heading">
+			        <h3 class="panel-title">1.2 Ethnic Details </h3>
+			 	</div>
+			 	<div class="panel-body">
+			    	<form role="form">
+			    	    <div class="row col-lg-12">
+			    		 <table width="100%"   >
+			    				
+			    			<tr>
+			    			    <td>
+			    			
+			    			        <input type="text" name="nationality" id="nationality" class="form-control " placeholder="Nationality" required="required">
+                                   
+
+                                </td>
+                                <td>
+<select id="religion" name="religion" class="form-control" required="required">
+                            <option value="" selected="selected">Religion</option>
+                            <option value="hindu">Hinduism</option>
+                                        <option value="islam">Islam</option>
+                                        <option value="christianity">Christianity</option>
+                                        <option value="sikhism">Sikhism</option>
+                                        <option value="buddhism">Buddhism</option>
+                                        <option value="jainism">Jainism</option>
+                                        <option value="otherreligions">Other religions</option>
+                            
+                                        </select>
+                                </td>
+
+                            
+                                <td>
+                                    <input type="text" name="languagesknown" id="languagesknown" class="form-control " placeholder="Languages Known">
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                   <input type="text" name="caste" id="caste" class="form-control " placeholder="Caste">
+                                </td>
+                           
+                                <td>
+                                    <select id="community" name="community" class="form-control">
+                                        <option value="" selected="selected">Community</option>
+                           
+                                        <option value="sc">SC/ST</option>
+                                        <option value="mbc">MBC</option>
+                                        <option value="bc">BC</option>
+                                        <option value="oc">OC</option>
+                                        
+                            
+                                        </select>
+                                </td>
+
+                                <td>
+
+                                   <select id="blood" name="blood" class="form-control" required="required">
+                            <option value="" selected="selected">Blood Group</option>
+                            <option value="hindu">A-</option>
+                                        <option value="islam">O+</option>
+                                        <option value="christianity">A-</option>
+                                        <option value="sikhism">A+</option>
+                                        <option value="buddhism">B-</option>
+                                        <option value="jainism">B+</option>
+                                        <option value="otherreligions">AB-</option>
+                                        <option value="otherreligions">AB+</option>
+                                        </select>
+                                    
+
+
+                                </td>
+                            </tr>
+                            
+                          </table>
+                        </div>
+</form>
+</div>
+</div>
+
+
+<div class="panel panel-success ">
+        		<div class="panel-heading">
+			        <h3 class="panel-title">1.3 Address Details </h3>
+			 	</div>
+			 	<div class="panel-body">
+			    	<form role="form">
+			    	    <div class="row col-lg-12">
+			    		 <table width="100%"   >
+			    				
+			    			<tr>
+			    			    <td>
+			    			
+			    			        <input type="text" name="presentaddress1"  class="form-control " placeholder="Present Address" required="required">
+                                   
+
+                                </td>
+                                <td>
+                                    <input type="text" name="pincode1"  class="form-control " placeholder="Pincode/Zipcode" required="required">
+                                </td>
+
+                            
+                                <td>
+                                    <input type="text" name="state1"  class="form-control " placeholder="State" required="required">
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                   <input type="text" name="country1"  class="form-control " placeholder="Country" required="required">
+                                </td>
+                           
+                                <td>
+                                    <input type="checkbox" name="addresstoo" onclick="Filladdress(this.form)" required="required" >
+Check this box if Present Address and Permanent Address are same
+                                </td>
+
+                                <td>
+
+                                  <input type="text" name="permanentaddress2"  class="form-control " placeholder="Permanent Address" required="required"> 
+                                    
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                            <td>
+                                <input type="text" name="pincode2"  class="form-control " placeholder="Pincode/Zipcode" required="required">	
+                            </td>
+                            <td>
+                            	<input type="text" name="state2"  class="form-control " placeholder="State" required="required">
+                            </td>
+                            <td>
+                            	<input type="text" name="country2"  class="form-control " placeholder="Country" required="required">
+                            </td>
+                            	
+                            
+                            </tr>
+                           
+                            
+                          </table>
+                        </div>
+                        <div class="btn-group col-lg-offset-10">
+         
+           <a href="Parents.html" class="btn btn-primary" > --Next-- </a>
+           </div>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+        </div>
+        </div>
+    
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="School Registration/js/bootstrap.min.js"></script>
+
+</body>
+</html>		    			
+			    			

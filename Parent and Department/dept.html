@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Department details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="Stylesheet" type="text/css" />
+<script language="javascript">
+        $(document).ready(function () {
+            $("#txtdate").datepicker({
+                changeMonth: true,
+                changeYear: true
+
+            });
+        });
+
+        function fun1(){
+	        	document.getElementById('dropdowns').style.display="inline";
+	        }
+        	function fun3(){
+        	document.getElementById('dropdown2').style.display="inline";   }
+        	
+
+   
+	function fun2(){
+		var year=document.getElementById("academic_year");
+		var value1=year.value;
+		var dept1 = document.getElementById("dept");
+ 		var value2 = dept1.value;
+ 		var branch = document.getElementById("dept_type");
+ 		var value3 = branch.value;
+ 		if(value1=="select"){
+ 			alert("please select academic year");
+ 		} else if(value2=="select"){
+ 			alert("please select a department");
+ 		}
+ 		else if(value3=="select"){
+ 			alert("please select branch");
+ 		}
+ 		else{
+      document.getElementById('tableview').style.display="inline";
+     
+ 		}
+		}
+
+			$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+
+<style>
+	.btn-primary1{
+		border: 0;
+  		background:pink;
+  		padding: 11px 30px;
+ 		font-size: 14px;
+		}
+	.btn-primary:hover>.dropdown-submenu {
+  	display: block;
+	}
+	.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -10px;
+}
+.col-md-3{
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.col-md-2{
+	margin-top: 10px;
+	margin-right: 10px;
+}
+th {
+    text-align: center;
+}
+
+table,th,td
+{
+	border:1 px solid black;
+}
+.btn-primary{
+	margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="row">
+	<h2><center>Department details</center></h2>
+	<hr>
+	<div class="dropdown">
+
+	<button class="btn btn-primary1 dropdown-toggle" type="button" data-toggle="dropdown">Department
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Attendance</a></li>
+      <li class="dropdown-submenu">
+      <a class="test" tabindex="=1" href="#">Academic<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#" onclick="fun1()">Activity Report</a></li>
+        <li><a href="#" onclick="fun3()">Releaving Report</a></li>
+        <li><a  href="#">Courses</a></li>
+        <li><a  href="#">Exam Details</a></li>
+    </ul>
+      <li class="divider"></li>
+      <li class="dropdown-submenu">
+			<a class="test" tabindex="-1" href="#">View Details<span class="caret"></span></a>
+      		<ul class="dropdown-menu">
+				<li><a href="#">Student Information</a></li>
+				<li><a href="#">Employee Information</a></li>
+    </ul>
+    </ul>
+	</div>
+</div>
+<div id="dropdowns" style="display: none">
+<div class="col-md-2" >
+<select id="academic_year" name="Academic Year" class="form-control">
+<option value="select">--Academic Year--</option>
+<option value="1">2016-2017</option>
+     <option value="2">2017-2018</option>
+</select>
+</div>
+	<div class="col-md-2" >
+	<select id="dept" name="DEPARTMENT" class="form-control">
+	<option value="select">--Dept Type--</option>
+     <option value="1">Academic</option>
+     <option value="2">Non-Academic</option>	
+	</select>
+	</div>
+		<div class="col-md-2" >
+		<select id="dept_type" name="DEPARTMENT1" class="form-control">
+		<option value="select">--Dept--</option>
+	    <option value="1">B.Tech(IT)</option>
+	    <option value="2">BE(ECE)</option>	
+		</select>
+		</div>
+		<div class="col-md-3"  >
+		<input type="text" id="txtdate" class="form-control" placeholder="select date here (mm/dd/yyyy)"></div>
+		<div>
+		<input type="button" class="btn btn-primary" onclick="fun2()" value="show" ><br><br></div>
+		</div>
+			<div id="dropdown2" style="display: none">
+<div class="col-md-2" >
+<select id="academic_year" name="Academic Year" class="form-control">
+<option value="select">--Academic Year--</option>
+<option value="1">2016-2017</option>
+     <option value="2">2017-2018</option>
+</select>
+</div>
+	<div class="col-md-2" >
+	<select id="dept" name="DEPARTMENT" class="form-control">
+	<option value="select">--Dept Type--</option>
+     <option value="1">Academic</option>
+     <option value="2">Non-Academic</option>	
+	</select>
+	</div>
+		<div class="col-md-2" >
+		<select id="dept_type" name="DEPARTMENT1" class="form-control">
+		<option value="select">--Dept--</option>
+	    <option value="1">B.Tech(IT)</option>
+	    <option value="2">BE(ECE)</option>	
+		</select>
+		</div>
+		<div>
+		<input type="button" class="btn btn-primary" onclick="fun4()" value="show" ><br><br></div>
+		</div>
+
+		<div id="tableview" style="display: none">
+	<table class="table table-bordered" style="width:70%">
+<thead>
+<tr>
+            <th>S.No</th>
+            <th>Reg.No</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Activity</th>
+            <th >Action</th>
+</tr>
+</thead>
+<tr>
+<td>1</td>
+<td>std01</td>
+<td><img src="Hydrangeas.jpg" height="50" width="50"></img> </td>
+<td>Kavitha</td>
+<td>Student</td>
+<td>Quiz</td>
+<td><button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='Certificate_3.pdf'">View</button>
+</tr>
+
+<tr>
+<td>2</td>
+<td>std02</td>
+<td><img src="Tulips.jpg" height="50" width="50"></img> </td>
+<td>Kalpana.k</td>
+<td>Staff</td>
+<td>Workshop</td>
+<td><button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='Certificate_2.pdf'">View</button>
+</tr>
+
+<tr>
+<td>3</td>
+<td>std03</td>
+<td><img src="Chrysanthemum.jpg" height="50" width="50"></img> </td>
+<td>kaviya.s</td>
+<td>Staff</td>
+<td>Conference</td>
+<td><button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='Certificate_1.pdf'">View</button>
+</tr>
+</table>
+</div>
+
+</body>
+</html>

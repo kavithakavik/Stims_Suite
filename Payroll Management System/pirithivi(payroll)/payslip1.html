@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+   <head>
+            
+      <title>Pay Roll</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <link href="css/main.css" rel="stylesheet">
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="jquery-3.1.1.min.js"></script>
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+   </head>
+   <style>
+   .panel-default {
+    margin-top: 10%;
+    margin-left:400px;
+    width: 50%;
+ }
+ .form-horizontal .control-label {
+    padding-top: 10px;
+    margin-bottom: 0px;
+    text-align: right;
+} 
+img:hover{
+transition:1s transform ;
+transform: rotateY(360deg);
+    margin-bottom: 30px;
+
+  }
+  .container  {
+  text-align: left;
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container table {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+border-left: 1px solid #ddd;
+border-right: 1px solid #ddd;
+
+}
+
+.container td, .container th {
+  padding: 10px;
+}
+
+.container td:first-child, .container th:first-child {
+  padding-left: 20px;
+}
+.container th{
+    text-align: left;
+   padding-left: 10px
+   padding-left:  10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  
+}
+.container h2,h3
+{
+  text-align:center;
+}
+@media print
+{
+.noprint {display:none;}
+}
+</style>
+<script src="jquery-3.1.1.min.js"></script>
+  <script type="text/javascript">{
+      
+      function myFunction() 
+    window.print();
+}
+     
+    </script>
+     <script>
+     // function details()
+     // {
+     //  var pay_details={
+     //    'emdid':"Employee ID"
+     //  }
+     //  document.getElementById('empId').innerHTML=pay_details.empid;
+     // }
+    function CreateTableFromJSON() {
+    var empId = document.getElementById("empId");
+    var inputDate= document.getElementById("inputDate");
+    if (empId =="-1") {
+    if(inputDate =="-1")
+    {
+alert("Please select any one option here.....");
+    }
+else
+  {
+document.getElementById('TableView').style.display="inline";
+  }
+}
+else
+  {
+     document.getElementById('TableView').style.display="inline";
+  }
+  // document.getElementById('TableView').style.display="inline";
+        var pay=[{
+          'code':"001",
+          'grade':"A",
+          'name':"prithvi",
+          'D':"hod",
+           'basic_sal':"20000",
+           'leave':"500",
+           'DA':"2000",
+           'ESI':"2000",
+           "PF":"500",
+           'loan':"250",
+           'esi':"500",
+            'other_allowance':"700",
+            'ex_wrk':"1000",
+            'Attendance':"200",
+            'etotal':"30000",
+            'dtotal':"4000"
+           
+        },
+         {
+          'code':"002",
+          'grade':"B",
+          'name':"Sobana",
+          'D':"Staff",
+           'basic_sal':"15000",
+           'leave':"200",
+           'DA':"1000",
+           'ESI':"1000",
+           "PF":"300",
+           'loan':"350",
+           'esi':"560",
+            'other_allowance':"720",
+            'ex_wrk':"200",
+            'Attendance':"340",
+            'etotal':"20020",
+            'dtotal':"6700"
+         }  
+        ]
+        for(var i=0;i<pay.length;i++)
+        {
+        document.getElementById('td01').innerHTML= pay[i].code;
+        document.getElementById('td02').innerHTML= pay[i].grade;
+        document.getElementById('td03').innerHTML= pay[i].name;
+        document.getElementById('td04').innerHTML= pay[i].D;
+        document.getElementById('td05').innerHTML= pay[i].basic_sal;
+        document.getElementById('td06').innerHTML= pay[i].leave;
+        document.getElementById('td07').innerHTML= pay[i].DA;
+        document.getElementById('td08').innerHTML= pay[i].ESI;
+        document.getElementById('td09').innerHTML= pay[i].PF;
+        document.getElementById('td10').innerHTML= pay[i].loan;
+        document.getElementById('td11').innerHTML= pay[i].esi;
+        document.getElementById('td12').innerHTML= pay[i].other_allowance;
+        document.getElementById('td13').innerHTML= pay[i].ex_wrk;
+        document.getElementById('td14').innerHTML= pay[i].Attendance;
+        document.getElementById('td15').innerHTML= pay[i].etotal;
+        document.getElementById('td16').innerHTML= pay[i].dtotal;
+}
+       
+        for (var i = 0; i < pay.length; i++) {
+            for (var key in pay[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+        
+    }
+</script>
+
+
+   <body>
+   <div id="legend">
+      <legend class="text-primary"><h1>PAY SLIP</h1>
+      </legend>
+      </div>
+      <div class="main-container">
+      <div class="row gutter">
+      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+      <div class="panel">
+      <div class ="noprint"> 
+      <div class="panel-body">
+      <form id="defaultForm" method="post" action="#" class="form-horizontal">
+      <fieldset>
+      <div class="form-group row gutter">
+      <label class="col-lg-1 control-label" id="empId">EMP ID:</label> 
+      <div class="col-lg-2"><input type="text" class="form-control" ></div>
+      <label class="col-lg-1 control-label">Grade:</label> 
+      <div class="col-lg-2">
+      <select class="form-control" id="Grade" placeholder="Select">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+      <option>D</option>
+      </select></div>
+      <label  class="col-lg-1 control-label">Duration:</label> 
+      <div class="col-lg-2"><input type="date" class="form-control" id="inputDate"></div>
+      <div class="col-md-3">
+      <input type="button"  class="btn btn-primary"  onclick="CreateTableFromJSON()" value="Generate" />
+      <div id="showData"></div>
+      </fieldset>
+      </div>
+    </form>
+  </div>
+  </div>
+</fieldset>
+</form>
+</div>
+  <div class="main-container">
+  <div class="row gutter">
+  <div class="col-lg-12 col-md-6 col-sm-6 col-xs-6">
+  <div class="panel">                       
+  <div class="panel-body">
+  <form id="defaultForm" method="post" action="" class="form-horizontal ">
+  <div  class="container">
+  <div id="TableView" style="display: none">
+  <h2>
+  <img src="a.jpg" class="img-circle pull-mid" width="100" height="100">School Name  </h2>
+  </p>
+ <h3>  <tr>PAYSLIP</h3>
+<table>
+<thead>
+<tr>
+<td>Code:</td>
+<td id="td01"></td>
+<td>Grade:</td>
+<td id="td02"></td>
+<tr>
+<td> Name:</td>
+<td id="td03"></td>
+        <td>Deignation:</td>
+<td id="td04"></td>
+</tr>
+      </tr>
+      <tr>
+      <th>EARNINGS</th>
+      <th> Amount</th>
+      <th> DEDUCTION</th>
+      <th>Amount</th>
+      </tr>
+      <tr>    
+    <td> Basic Salary</td>
+    <td id="td05"></td>
+    <td> Leave</td>
+    <td id="td06"></td>
+    </tr>
+     <tr>    
+    <td> DA</td>
+    <td id="td07"></td>
+    <td> ESI</td>
+    <td id="td08"></td>
+    </tr>
+     <tr>    
+    <td>PF</td>
+    <td id="td09"></td>
+    <td> Loan</td>
+    <td id="td10"></td>
+    </tr>
+    <tr>
+    <td> ESI</td>
+    <td id="td11"></td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Other Allowance</td>
+    <td id="td12"></td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>Ex. Working Hours</td>
+    <td id="td13"></td>
+    <td></td>
+    <td></td>
+    </tr>
+    </tr><tr>
+    <td> Attendance</td>
+    <td id="td14"></td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>    
+    <td>Total</td>
+    <td id="td15"></td>
+    <td>Total</td>
+    <td id="td16"></td>
+    </tr>
+     </thead>
+
+  </table>
+   <button type="button" class="btn btn-primary pull-right" onClick= "javascript:myFunction();"> Print </button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>*

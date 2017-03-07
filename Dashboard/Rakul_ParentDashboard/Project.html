@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <script>
+        $(document).ready(function() {
+            $("#item_1").click(function() {
+                $("#myTable_1").toggle(500);
+                $("#myTable_2").hide(500);
+                $("#myTable_2Content_1").hide(500);
+                $("#myTable_2Content_2").hide(500);
+                $("#myTable_2Content_3").hide(500);
+                $("#GradingType").hide(500);
+                $("#myContainer_3").hide();
+                $("#myTable_3").hide(500);
+                $("#myContainer_3Table_2").hide(500);
+                $("#generalAttendance").hide(500);
+            });
+        });
+
+        $(document).ready(function() {
+            $("#item_2").click(function() {
+                $("#myTable_1").hide();
+                $("#myTable_2").toggle(500);
+                $("#myTable_2Content_1").toggle(500);
+                $("#myTable_2Content_2").toggle(500);
+                $("#myTable_2Content_3").toggle(500);
+                $("#GradingType").toggle(500);
+                $("#myContainer_3").hide();
+                $("#myTable_3").hide(500);
+                $("#myContainer_3Table_2").hide(500);
+                 $("#generalAttendance").hide(500);
+            });
+        });
+
+         $(document).ready(function() {
+            $("#item_3").click(function() {
+            	$("#myContainer_3").show();
+            	$("#myTable_3").show(500);
+                $("#myTable_1").hide(500);
+                $("#myTable_2").hide(500);
+                $("#myTable_2Content_1").hide(500);
+                $("#myTable_2Content_2").hide(500);
+                $("#myTable_2Content_3").hide(500);
+                $("#GradingType").hide(500);
+                $("#myContainer_3Table_2").hide();
+                 $("#generalAttendance").hide();
+            });
+        });
+
+          $(document).ready(function() {
+            $("#viewDetails_1").click(function() {
+            	$("#myContainer_3").show();
+            	$("#myTable_3").show(500);
+                $("#myTable_1").hide(500);
+                $("#myTable_2").hide(500);
+                $("#myTable_2Content_1").hide(500);
+                $("#myTable_2Content_2").hide(500);
+                $("#myTable_2Content_3").hide(500);
+                $("#GradingType").hide(500);
+                $("#myContainer_3Table_2").toggle(500);
+                $("#generalAttendance").toggle(500);
+            });
+        });
+
+           $(document).ready(function() {
+            $("#viewDetails_2").click(function() {
+            	$("#myContainer_3").show();
+            	$("#myTable_3").show(500);
+                $("#myTable_1").hide(500);
+                $("#myTable_2").hide(500);
+                $("#myTable_2Content_1").hide(500);
+                $("#myTable_2Content_2").hide(500);
+                $("#myTable_2Content_3").hide(500);
+                $("#GradingType").hide(500);
+                $("#myContainer_3Table_2").hide(500);
+                $("#generalAttendance").hide(500);
+                $("#subjectAttendance").toggle(500);
+                $("#myContainer_3Table_3").toggle(500);
+            });
+        });
+
+
+
+    </script>
+    <style>
+        .pusher {
+            padding-top: 50px;
+            padding-right: 30px;
+        }
+    </style>
+    }
+</head>
+
+<body>
+    <div class="ui sidebar light teal vertical left inverted menu">
+        <a href="#" class="item" id="item_1">View Profile</a>
+        <a href="#" class="item" id="item_2">View Subject</a>
+        <a href="#" class="item" id="item_3">View Attendance Details</a>
+        <a href="#" class="item" id="item_4">View all Teachers</a>
+        <a href="#" class="item" id="item_5">View Teacher's Rating</a>
+    </div>
+    <div class="ui icon top fixed menu" style="background-color:teal;">
+        <a id="toggle" class="item">
+            <i class="sidebar icon"></i> Menu
+        </a>
+        <div class="ui selection dropdown" id="drop" style="margin-left: 1050px;background-color: teal;">
+            <img class="ui avatar image" id="myImg" src="E:\STIM SUITE components\Icons\sachin.jpg"> Sachin
+            <i class="dropdown icon" style="padding-bottom: 5px;"></i>
+            <div class="menu" id="dropList">
+                <div class="item">
+                    <a style="color:red;text-decoration: none;">catchrakul@gmail.com</a>
+                </div>
+                <div>
+                    <button class="positive ui button">Account</button>
+                    <button style="margin-left: 4px;" class="negative ui button">Signout</button>
+                </div>
+            </div>
+            <script>
+                $('#drop').dropdown();
+            </script>
+        </div>
+    </div>
+    <div class="pusher">
+        <div class="ui container" id="myContainer_1">
+            <table class="ui blue striped table" id="myTable_1" hidden="myTable_1">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Day</th>
+                        <th>Status</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img style="border-radius: 50px" src="E:\Wallpaper\tiger.jpg" width="35px" height="35px">
+                        </td>
+                        <td>Dhoni</td>
+                        <td>6th Std</td>
+                        <td>8135487533</td>
+                    </tr>
+                    <tr>
+                        <td><img style="border-radius: 50px" src="E:\Wallpaper\download.jpg" width="35px" height="35px">
+                        </td>
+                        <td>Shakshi</td>
+                        <td>8th Std</td>
+                        <td>9135597533</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <table id="myTable_2Content_1" hidden>
+                    <tr>
+                        <td>
+                            <p>
+                                <b><i>Exam Results of &nbsp; <strong style="font-size: 20px;color:#ff6600;text-shadow: 4px 4px 0px rgba(0,0,0,0.1);">Quarterly Examination</strong></i></b>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <table class="ui blue striped table" id="myTable_2" hidden="myTable_2">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Total Marks</th>
+                            <th>Obtained Marks</th>
+                            <th>Grade</th>
+                            <th>Grade Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tamil</td>
+                            <td>100</td>
+                            <td>80</td>
+                            <td>B</td>
+                            <td>Very Good</td>
+                        </tr>
+                        <tr>
+                            <td>English</td>
+                            <td>100</td>
+                            <td>90</td>
+                            <td>A</td>
+                            <td>Excellent</td>
+                        </tr>
+                        <tr>
+                            <td>Maths</td>
+                            <td>100</td>
+                            <td>65</td>
+                            <td>D</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>O</td>
+                            <td>Wonderful</td>
+                        </tr>
+                        <tr>
+                            <td>Social Science</td>
+                            <td>100</td>
+                            <td>70</td>
+                            <td>C</td>
+                            <td>Good</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="myTable_2Content_3" hidden>
+                    <tr>
+                        <td>
+                            <p style=" text-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                                <b>Total Marks: 500</b>
+                            </p>
+                        </td>
+                        <td>
+                            <p style="margin-left: 20px;text-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                                <b>Obtained Marks: 405</b>
+                            </p>
+                        </td>
+                        <td>
+                            <button class="ui button" style="border-radius: 50px;background-color: #0E6EB8;color:white;margin-left: 700px;">PDF</button>
+                        </td>
+                        <td>
+                            <button class="ui button" style="border-radius: 50px;background-color: #0E6EB8;color:white;">Print</button>
+                        </td>
+                    </tr>
+                    <br/>
+                    <tr>
+                        <td>
+                            <p style="font-size: 16px;">
+                                <b>Grading System</b>
+                                <hr>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <table class="ui inverted teal table" id="GradingType" hidden>
+                    <thead>
+                        <tr>
+                            <th>O(95%-100%)</th>
+                            <th>A (90%-94%)</th>
+                            <th>B (80%-89%)</th>
+                            <th>C (70%-79%)</th>
+                            <th>D (60%-69%)</th>
+                            <th>D (50%-59%)</th>
+                            <th>RA (Arrear)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wonderful</td>
+                            <td>Excellent</td>
+                            <td>Very Good</td>
+                            <td>Good</td>
+                            <td>Average</td>
+                            <td>Below Average</td>
+                            <td>Fail in Examination</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="myContainer_3" hidden="myContainer_3">
+            <table id="myTable_3">
+                <tr>
+                    <td style="padding-left: 350px;">
+                        <div class="ui cards">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="header">
+                                        General Attendance
+                                    </div>
+                                    <div class="meta">
+                                        <i> Taken at Forenoon and Afternoon</i>
+                                    </div>
+                                    <div class="description">
+                                        Intimated through <b> Message and Notification</b>
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <div class="ui two buttons">
+                                        <div class="ui teal button" id="viewDetails_1">View Details</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="padding-left: 100px;">
+                        <div class="ui cards">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="header">
+                                        Subjectwise Attendance
+                                    </div>
+                                    <div class="meta">
+                                        <i> Taken at Every Period</i>
+                                    </div>
+                                    <div class="description">
+                                        Intimated through<b> Message and Notification</b>
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <div class="ui two buttons">
+                                        <div class="ui teal button" id="viewDetails_2">View Details</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+           <h1 id="generalAttendance" style="text-shadow: 4px 4px 0px rgba(0,0,0,0.1)"> General Attendance Details </h1>
+          <table class="ui teal striped table" id="myContainer_3Table_2">
+          	<thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Day</th>
+                        <th>Status</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>06/03/2017</td>
+                        <td>Monday</td>
+                        <td>Present</td>
+                        <td>NIL</td>
+                    </tr>
+                </tbody>
+          </table>
+
+           <h1 id="subjectAttendance" style="text-shadow: 4px 4px 0px rgba(0,0,0,0.1);" hidden > Subject Attendance Details </h1>
+          <table class="ui teal striped table" id="myContainer_3Table_3" hidden>
+          	<thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Day</th>
+                        <th>Tamil</th>
+                        <th>English</th>
+                        <th>Maths</th>
+                        <th>Science</th>
+                        <th>Social</th>
+                        <th>Status</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>06/03/2017</td>
+                        <td>Monday</td>
+                        <td>Present</td>
+                        <td>Present</td>
+                        <td>Present</td>
+                        <td>Present</td>
+                        <td>Absent</td>
+                        <td>Good</td>
+                        <td>NIL</td>
+                    </tr>
+                </tbody>
+          </table>
+
+        </div>
+
+    </div>
+    <script>
+        $('#toggle').click(function() {
+            $('.ui.sidebar').sidebar('toggle');
+        });
+    </script>
+</body>

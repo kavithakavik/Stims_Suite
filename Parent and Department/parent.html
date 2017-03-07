@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Student details</title>
+
+    <!-- Bootstrap -->
+    <link href="Bootstrap Tutorial/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+<style type="text/css">
+      td
+      {
+        padding:9px;
+      }
+      .panel-body{
+      	height: 400px;
+      }
+      .panel-body-photo{
+      	height: 150px;
+      }
+      .edit{
+      	margin-left: 20px;
+      }
+      .btn-info {
+  		border: 0;
+  		background: #648880;
+  		padding: 11px 30px;
+ 		font-size: 14px;
+		}
+	.btn-default:hover {
+  	background: #77a198;
+		}
+		.modal-content{
+			margin-left: 20px;
+		}
+      </style>
+</head>
+<body class="form" ng-App="myApp" ng-controller="myController">
+<center>
+	<h2 > View Student Details</h2>
+</center>
+<hr/>
+<div class="container" >
+<div class="row">
+<div class="col-lg-2">
+		<div class="panel panel-primary">
+			<div class="panel-body-photo"><center><b>Student Photo</b></center></div>
+</div>
+</div>
+	<div class="col-lg-4">
+	<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">Personal details </h3>	</td></tr>
+		</div>
+			<div class="panel-body">
+			<table width="120%">
+			<tr>
+			<td>Student ID:</td>
+			<td>028</td>
+			</tr>
+			<tr>
+			<td>Student name:</td>
+			<td>uma</td>
+			</tr>
+			<tr><td>Standard:</td>
+			<td>V</td>
+			</tr>
+			<tr><td>Parent ID:</td>
+			<td><a href="details.html">343</a></td></tr>
+			<tr><td>Father name:</td>
+			<td>Bhuvanesh</td></tr>
+			<tr><td>Mother name:</td>
+			<td>Rajee</td></tr>
+			<tr><td>Sibling:</td>
+			<td>Siva</td></tr>
+			<tr><td>Age:</td>
+			<td>20</td></tr>
+			<tr><td>Blood group:</td>
+			<td>A1+</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+		<div class="col-lg-4">
+		<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">Other details </h3>	</td></tr>
+		</div>
+			<div class="panel-body">
+			<table width="120%">
+			<tr>
+			<td>DOB :</td>
+			<td>22-07-1995</td>
+			</tr>
+			<tr>
+			<td>Gender :</td>
+			<td>Female </td>
+			</tr>
+			<tr><td>Nationality :</td>
+			<td>Indian </td>
+			</tr>
+			<tr><td>Contact :</td>
+			<td>878754343</td></tr>
+			</tr>
+			<tr><td>Email :</td>
+			<td>uma@gmail.com</td></tr>
+			</table>
+			</div>
+			</div>
+			</div>
+			
+			<button class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">Update</button>
+			<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      	<h4 class="modal-title" id="ModelLabel"> Student Details </h4>
+      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      		 <span aria-hidden="true">&times;</span>
+      	</button>
+      </div>
+      <div class="modal-body">
+      	<div class="container-fluid">
+      	<div class="row">
+
+      	<div class="col-lg-2">
+		<div class="panel panel-primary">
+			<div class="panel-body-photo"><center><b>Student Photo</b></center></div>
+</div>
+</div>
+      	<div class="col-lg-4">
+      	<div class="panel panel-primary">
+      	<div class="panel-heading">
+      	<h3 class="panel-title">Personal details </h3>	</td></tr>
+		</div>
+			<div class="panel-body">
+			<table width="120%">
+			<tr>
+			<td>Student ID:</td>
+			<td>028</td>
+			</tr>
+			<tr>
+			<td>Student name:</td>
+			<td>uma</td>
+			</tr>
+			<tr><td>Standard:</td>
+			<td>V</td>
+			</tr>
+			<tr><td>Parent ID:</td>
+			<td>343</td></tr>
+			<tr><td>Father name:</td>
+			<td>Bhuvanesh</td></tr>
+			<tr><td>Mother name:</td>
+			<td>Rajee</td></tr>
+			<tr><td>Sibling:</td>
+			<td>Siva</td></tr>
+			<tr><td>Age:</td>
+			<td>20</td></tr>
+			<tr><td>Blood group:</td>
+			<td>A1+</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4">
+		<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">Other details </h3>	</td></tr>
+		</div>
+			<div class="panel-body">
+			<table width="120%">
+			<tr>
+			<td>DOB :</td>
+			<td>22-07-1995</td>
+			</tr>
+			<tr>
+			<td>Gender :</td>
+			<td>Female </td>
+			</tr>
+			<tr><td>Nationality :</td>
+			<td>Indian </td>
+			</tr>
+			<tr><td>Contact :</td>
+			<td>878754343</td></tr>
+			</tr>
+			<tr><td>Email :</td>
+			<td>uma@gmail.com</td></tr>
+			</table>
+			</div>
+			</div>
+			</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+			
+</div>
+</div>
+</body>
+</html>
